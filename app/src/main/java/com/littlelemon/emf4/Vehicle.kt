@@ -28,7 +28,11 @@ class MotorCycle(
     model: String,
     year: Int,
     private val sideCar:Boolean
-):Vehicle(make, model, year)  {
+):Vehicle(
+    make,
+    model,
+    year
+)  {
     override fun displayProperties() {
         println("$make is of model $model and year $year and have side car = $sideCar")
     }
@@ -47,10 +51,15 @@ class Truck(
 }
 
 fun main() {
-    val vehicle1 = Car("TATA","Curve-ev",2024,4)
-    val vehicle2 = MotorCycle("Hero","Spender",2018,false)
-    val vehicle3 = Truck("Eicher","E555",2021,50000)
-    println(vehicle1)
-    println(vehicle2)
-    println(vehicle3)
+    val vehicles:List<Vehicle> = listOf(
+        Car("Tata","Curve-ev",2021,4),
+        MotorCycle("Hero","Splended",2018,false),
+        Truck("Eicher","E756",2022,50000),
+        MotorCycle("Honda","crosser",2016,true),
+        Car("Mercenaries","Q2-ecv",2023,2),
+        Truck("Tata","R246Y",2019,68700)
+    )
+    vehicles.forEach{
+        it.displayProperties()
+    }
 }
