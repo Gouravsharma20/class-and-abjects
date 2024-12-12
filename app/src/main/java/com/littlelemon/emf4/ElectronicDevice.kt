@@ -5,6 +5,9 @@ abstract class ElectronicDevice(
     val price:Int
 ) {
     abstract fun uniqueFeatures()
+    fun displayCommonProperties() {
+        println("Brand:$brand Price:$price")
+    }
 }
 
 class SmartPhone(
@@ -16,7 +19,7 @@ class SmartPhone(
     price
 ) {
     override fun uniqueFeatures() {
-        println("$brand phone is of price $price and has a $batteryLife years")
+        println("BatteryLife = $batteryLife years")
     }
 }
 
@@ -30,7 +33,7 @@ class Laptop(
     price
 ) {
     override fun uniqueFeatures() {
-        println("$brand of rupees $price has a ramsize of $ramSize gb")
+        println("Ramsize = $ramSize Gb")
     }
 }
 
@@ -43,7 +46,7 @@ class Tablet(
     price
 ) {
     override fun uniqueFeatures() {
-        println("$brand has a screensize of $screenSize of price $price")
+        println("price = $price")
     }
 }
 
@@ -58,5 +61,6 @@ fun main() {
     )
     device.forEach{
         it.uniqueFeatures()
+        it.displayCommonProperties()
     }
 }
